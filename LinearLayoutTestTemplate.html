@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport"
+		  content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<title>{{sampleid}}</title>
+
+	<link rel="stylesheet" href="http://localhost:80/delite/themes/defaultapp.css">
+
+	<script type="text/javascript" src="http://localhost:80/requirejs/require.js"></script>
+
+	<script type="text/javascript">
+		require.config({
+			baseUrl: "http://localhost:80/"
+		});
+	</script>
+
+	<script type="text/javascript">
+		require([
+			"delite/register",
+			"deliteful/LinearLayout",
+			"requirejs-domready/domReady!"
+		], function(register){
+			register.parse();
+		});
+	</script>
+	<style>
+		.-d-linear-layout-v {
+			border: solid 2px red;
+			font-weight: bold;
+		}
+		.-d-linear-layout-h {
+			border: solid 2px orange;
+			font-weight: bold;
+		}
+
+		.-d-linear-layout-h > div {
+			background-color: powderblue;
+			border: solid 1px white;
+		}
+
+		.-d-linear-layout-h > div.fill {
+			background-color: deepskyblue;
+			border: solid 1px white;
+		}
+
+		.-d-linear-layout-h > div [style*="width: 30%"] {
+			background-color: darkblue;
+			border: solid 1px white;
+		}
+
+		.-d-linear-layout-v > div {
+			background-color: greenyellow;
+			border: solid 1px white;
+		}
+
+		.-d-linear-layout-v > div.fill {
+			background-color: limegreen;
+			border: solid 1px white;
+		}
+
+		.-d-linear-layout-v > div [style*="width: 30%"] {
+			background-color: darkgreen;
+			border: solid 1px white;
+		}
+
+
+	</style>
+</head>
+<body>
+<d-linear-layout {{{llStyle}}} {{{vertStyle1}}}>
+<div {{{divStyle1}}} {{{divClass1}}}>
+<d-linear-layout {{{llStyle}}} {{{vertStyle2}}}>
+<div {{{divStyle1}}} {{{divClass1}}}>ALFA</div>
+<div {{{divStyle2}}} {{{divClass2}}}>BRAVO</div>
+<div {{{divStyle3}}} {{{divClass3}}}>CHARLY</div>
+<div {{{divStyle1}}} {{{divClass2}}}>DELTA</div>
+</d-linear-layout>
+</div>
+<div {{{divStyle2}}} {{{divClass1}}}>
+<d-linear-layout {{{llStyle}}} {{{vertStyle3}}}>
+<div {{{divStyle1}}} {{{divClass1}}}>ECHO</div>
+<div {{{divStyle2}}} {{{divClass2}}}>FOXTROT</div>
+<div {{{divStyle3}}} {{{divClass3}}}>GOLF</div>
+</d-linear-layout>
+</div>
+<div {{{divStyl3}}} {{{divClass2}}}>
+HOTEL
+</div>
+</d-linear-layout>
+</body>
+</html>
